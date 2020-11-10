@@ -4,9 +4,9 @@
 
 // Autoloader
 
-//require_once('lib/template.php');
+require_once('lib/template.php');
 
-function __autoload($class_name){
-    require_once 'lib/'.$class_name. '.php';
-}
+// function __autoload($class_name){
+//     require_once 'lib/'.$class_name. '.php';
+// }
 
