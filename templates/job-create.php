@@ -1,4 +1,5 @@
 <?php require_once "inc/header.php" ?>
+<div class="container py-5">
     <h2 class="page-header">Create Job Listing</h2>
     <form method="POST" action="create.php">
     <div class = "form-group">
@@ -40,4 +41,6 @@
     </div>
     <input type="submit" class="btn btn-secondary" value="Submit" name="submit">
     </form> 
+
+</div>
 <?php require_once "inc/footer.php" ?>
