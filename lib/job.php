@@ -45,4 +45,27 @@ class Job{
         return $results;
     }
 
+    //Get category
+    public function getCategory($category){
+        $this->db->query("SELECT * FROM categories WHERE id = :category_id"
+    );
+        $this->db->bind(':category_id', $category);
+
+        //assign row
+        $row = $this->db->single();
+
+        return $row;
+    }
+
+    //Get job
+    public function getJob($id){
+        $this->db->query("SELECT * FROM job WHERE id = :id"
+    );
+        $this->db->bind(':id', $id);
+
+        //assign row
+        $row = $this->db->single();
+
+        return $row;
+    }
 }

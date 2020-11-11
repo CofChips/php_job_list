@@ -22,15 +22,16 @@
 
   <div class="container">
     <!-- Job Listing -->
+    <h3><?php echo $title; ?></h3>
     <?php foreach($jobs as $job): ?> 
     <div class="row">
       <div class="col-md-10">
-        <h2><?php echo $job->job_title; ?></h2>
+        <h4><?php echo $job->job_title; ?></h4>
         <p><?php echo $job->description; ?> </p>
         
       </div>
       <div class="col-md-2">
-        <a class="btn btn-secondary" href="#" role="button">View details &raquo;</a>
+        <a class="btn btn-secondary" href="job.php?id=<?php echo $job->id; ?>" role="button">View details &raquo;</a>
       </div>
     </div>
     <?php endforeach; ?>
