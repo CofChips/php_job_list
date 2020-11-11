@@ -6,44 +6,35 @@
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div class="container">
-      <h1 class="display-3">Hello, world!</h1>
-      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      <h1 class="display-3">Search For Job</h1>
+      <form method="GET" action="index.php">
+        <select name="category" class ="form-control">
+          <option value="0">Choose Category</option>
+          <?php foreach($categories as $category): ?>
+            <option value="<?php echo $category->id; ?>"><?php echo $category->name; ?></option>
+          <?php endforeach; ?>
+        </select>
+        <br/>
+        <input type="submit" class="btn btn-lg btn-success" value="FIND">
+      </form>  
     </div>
   </div>
 
   <div class="container">
     <!-- Job Listing -->
+    <?php foreach($jobs as $job): ?> 
     <div class="row">
       <div class="col-md-10">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <h2><?php echo $job->job_title; ?></h2>
+        <p><?php echo $job->description; ?> </p>
         
       </div>
       <div class="col-md-2">
         <a class="btn btn-secondary" href="#" role="button">View details &raquo;</a>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-10">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        
-      </div>
-      <div class="col-md-2">
-        <a class="btn btn-secondary" href="#" role="button">View details &raquo;</a>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-10">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        
-      </div>
-      <div class="col-md-2">
-        <a class="btn btn-secondary" href="#" role="button">View details &raquo;</a>
-      </div>
-    </div>
+    <?php endforeach; ?>
+
 
     <hr>
 
