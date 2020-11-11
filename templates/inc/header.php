@@ -30,3 +30,5 @@
     </form>
   </div>
 </nav>
+
+<?php displayMessage(); ?>

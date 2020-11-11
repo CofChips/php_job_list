@@ -1,5 +1,5 @@
 <?php require_once "inc/header.php" ?>
-
+    <div class="container py-5">
     <h2 class="page-header"><?php echo $job->job_title; ?> (<?php echo $job->location; ?>)</h2>
     <small>Posted By <?php echo $job->contact_user; ?> on <?php echo $job-> post_date; ?></small>
     <hr>
@@ -13,5 +13,14 @@
     <br><br>
     <a href="index.php">Return</a>
     <br><br>
+    <div class="well">
+        <a href="edit.php?id=<?php echo $job->id; ?>" class = "btn btn-secondary">Edit</a>
+
+        <form style="display:inline;" method = "POST" action="job.php">
+            <input type="hidden" name = "del_id" value="<?php echo $job->id;?>">
+            <input type="submit" class="btn btn-danger" value="Delete">
+        </form>
+    </div>
+    </div>
 
 <?php require_once "inc/footer.php" ?>
